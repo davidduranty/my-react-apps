@@ -1,8 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const PokemonCard = ({ pokemon }) => {
-  
-
   return (
     <figure>
       {pokemon.imgSrc !== undefined ? (
@@ -14,5 +13,10 @@ const PokemonCard = ({ pokemon }) => {
     </figure>
   );
 };
-
+PokemonCard.PropTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
+  }).isRequired,
+};
 export default PokemonCard;
