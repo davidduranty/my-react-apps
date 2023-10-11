@@ -1,7 +1,7 @@
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const pokemonList = [
   {
@@ -30,9 +30,11 @@ const pokemonList = [
 ];
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-
   const pokemon = pokemonList[pokemonIndex];
 
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
   // function handleButton() {
   //   if (pokemonIndex !== 0)
   //     return <button onClick={handleClickPlus}>Précédent</button>;
@@ -40,7 +42,13 @@ function App() {
   // }
   function handleClick(index) {
     setPokemonIndex(index);
+    if (index === 3) {
+      setTimeout(() => {
+        alert("pika pikachu !!!");
+      }, 100);
+    }
   }
+
   return (
     <div>
       <PokemonCard pokemon={pokemon} />

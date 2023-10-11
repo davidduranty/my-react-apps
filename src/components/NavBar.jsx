@@ -1,15 +1,15 @@
 
 
-const NavBar = ({ pokemonList, handleClick }) => {
-    
 
-   
-    
+const NavBar = ({ pokemonList, handleClick }) => {
   return (
     <div>
       {pokemonList.map((pokemon, index) => (
-        <button key={pokemon.name} onClick={() => handleClick(index)} >{pokemon.name}</button>
+        <button key={pokemon.name} onClick={() => handleClick(index)}>
+          {pokemon.name}
+        </button>
       ))}
+    
     </div>
   );
 };
